@@ -1,0 +1,191 @@
+{
+  "id": "1680019",
+  "name": "WeSchool后台",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "后台图标",
+  "glyphs": [
+    {
+      "icon_id": "13594663",
+      "name": "icon_wancheng",
+      "font_class": "icon_wancheng",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "13555784",
+      "name": "btn_daochu",
+      "font_class": "btn_daochu",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "13555788",
+      "name": "btn_piliangdaochu",
+      "font_class": "btn_piliangdaochu",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "13394144",
+      "name": "btn_shanchu",
+      "font_class": "btn_shanchu",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "13394145",
+      "name": "btn_tianjia",
+      "font_class": "btn_tianjia",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "13394146",
+      "name": "btn_bukeshangchu",
+      "font_class": "btn_bukeshangchu",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "13354660",
+      "name": "icon_tishi_youjian",
+      "font_class": "icon_tishi_youjian1",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "13354431",
+      "name": "icon_all",
+      "font_class": "icon_all",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "13354433",
+      "name": "icon_riCheng_kecheng",
+      "font_class": "icon_riCheng_kecheng",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "13354435",
+      "name": "icon_tishi_kecheng",
+      "font_class": "icon_tishi_kecheng",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "13345968",
+      "name": "btn_riCheng",
+      "font_class": "btn_riCheng",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "13345801",
+      "name": "btn_jiaoShi",
+      "font_class": "btn_jiaoShi",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "13345802",
+      "name": "btn_jiaoShi_selected",
+      "font_class": "btn_jiaoShi_selected",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "13345803",
+      "name": "btn_banJI_selected",
+      "font_class": "btn_banJI_selected",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "13345804",
+      "name": "btn_keCheng_selected",
+      "font_class": "btn_keCheng_selected",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "13345805",
+      "name": "btn_tumuliebiao_xiayi",
+      "font_class": "btn_tumuliebiao_xiayi",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "13345807",
+      "name": "btn_tumuliebiao_bianji",
+      "font_class": "btn_tumuliebiao_bianji",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "13345808",
+      "name": "btn_keCheng",
+      "font_class": "btn_keCheng",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "13345809",
+      "name": "btn_riCheng_selected",
+      "font_class": "btn_riCheng_selected",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "13345810",
+      "name": "btn_banJI",
+      "font_class": "btn_banJI",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "13345811",
+      "name": "btn_tumuliebiao_shanchu",
+      "font_class": "btn_tumuliebiao_shanchu",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "13345812",
+      "name": "btn_sheZhi_selected",
+      "font_class": "btn_sheZhi_selected",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "13345813",
+      "name": "btn_kaoShi",
+      "font_class": "btn_kaoShi",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "13345814",
+      "name": "btn_kaoShi_slected",
+      "font_class": "btn_kaoShi_slected",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "13345815",
+      "name": "btn_tumuliebiao_shangyi",
+      "font_class": "btn_tumuliebiao_shangyi",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "13345816",
+      "name": "btn_sheZhi",
+      "font_class": "btn_sheZhi",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    }
+  ]
+}

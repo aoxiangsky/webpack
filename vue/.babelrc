@@ -1,0 +1,14 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        // 禁止模块化的转换，由ES6转换为commonJs，因为这样会使treeShaking失效。将ES6模块语法交由webpack本身处理
+        "modules": false,
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ]
+  ],
+  "plugins": [["@babel/transform-runtime"], ["@babel/syntax-dynamic-import"]]
+}

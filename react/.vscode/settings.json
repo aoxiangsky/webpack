@@ -1,0 +1,8 @@
+{
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		// 开启保存自动修复所有stylelint可修复的选项
+        "source.fixAll.stylelint": true
+	},
+	"editor.formatOnSave": true
+}
