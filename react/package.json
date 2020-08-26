@@ -4,7 +4,7 @@
   "description": "webpack-react",
   "main": "index.js",
   "sideEffects": [
-    "*.css" 
+    "*.css"
   ],
   "scripts": {
     "start": "webpack-dev-server --config ./scripts/webpack.dev.conf.js",
