@@ -1,0 +1,139 @@
+$color-primary: rgb(245, 108, 108) !default;
+$color-warning: rgb(255, 186, 0) !default;
+$color-success: rgb(70, 201, 58) !default;
+$color-danger: rgb(255, 71, 87) !default;
+$color-info: rgb(144, 147, 153) !default;
+// 注释asdsadsadaewrrettyoipofigpfj;xzcjbz;lxcvx;lkvjl;xcjl;dj;flAJSLDLB
+$dip-colors: (primary: $color-primary,
+  warning: $color-warning,
+  success: $color-success,
+  danger: $color-danger,
+  info: $color-info,
+);
+
+@mixin generate-color {
+  $colors: map-keys($dip-colors);
+
+  @each $color in $colors {
+    .dip-button-#{$color} {
+      background-color: map-get($dip-colors, $color);
+      border: 1px solid map-get($dip-colors, $color);
+      border-radius: 4px;
+      color: #fff;
+
+      &:hover {
+        background-color: saturate(lighten(map-get($dip-colors, $color), 6%),
+            20%);
+      }
+
+      &:active {
+        background-color: desaturate(darken(map-get($dip-colors, $color), 4%),
+            20%);
+      }
+
+      &[class$="-plain"] {
+        background-color: transparent;
+        color: map-get($dip-colors, $color);
+
+        &:hover {
+          background-color: saturate(lighten(map-get($dip-colors, $color), 26%),
+              5%);
+        }
+
+        &:active {
+          background-color: map-get($dip-colors, $color);
+          color: #fff;
+        }
+      }
+
+      &[class$="-flat"] {
+        background-color: transparent;
+        border-color: transparent;
+        color: map-get($dip-colors, $color);
+
+        &:hover {
+          background-color: saturate(lighten(map-get($dip-colors, $color), 40%),
+              40%);
+        }
+
+        &:active {
+          background-color: map-get($dip-colors, $color);
+          color: #fff;
+        }
+      }
+
+      &[class$="-gradient"] {
+        background-color: map-get($dip-colors, $color);
+        background-image: linear-gradient(30deg,
+            saturate(lighten(map-get($dip-colors, $color), 5%), 40%),
+            desaturate(darken(map-get($dip-colors, $color), 10%), 25%));
+        text-shadow: 1px 2px 4px rgba(112, 11, 11, 0.3);
+
+        &:hover {
+          box-shadow: 0 8px 25px -8px #aaa;
+          transform: translateY(-2px);
+        }
+
+        &:active {
+          box-shadow: 0 8px 0 -8px #aaa;
+          transform: translate(0);
+        }
+      }
+
+      &[class$="-circle"] {
+        border-radius: 50%;
+        padding: 8px;
+      }
+
+      &:disabled {
+        background-color: rgba(0, 0, 0, 0.12) !important;
+        background-image: none;
+        border-color: rgba(0, 0, 0, 0.12);
+        box-shadow: none !important;
+        color: rgba(0, 0, 0, 0.26) !important;
+        cursor: not-allowed;
+        transform: none;
+
+        &:hover {
+          background-image: none;
+          box-shadow: none !important;
+          transform: none;
+        }
+      }
+    }
+  }
+}
+
+.dip-button {
+  align-items: center;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.1s ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.dip-btn-inner {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: inherit;
+  line-height: normal;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+@include generate-color();
