@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-03-25 11:06:32
+ * @LastEditTime: 2021-03-25 14:23:48
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \vue\build\webpack.base.conf.js
+ */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");

@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-03-25 11:06:32
+ * @LastEditTime: 2021-03-25 13:16:04
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \vue\.eslintrc.js
+ */
 module.exports = {
     root: true,
     parserOptions: {
@@ -9,14 +17,6 @@ module.exports = {
       browser: true,
       node: true,
       es6: true
-    },
-    ecmaFeatures: {
-      //指定要使用其他那些语言对象
-      experimentalObjectRestSpread: true, //启用对对象的扩展
-      jsx: true, //启用jsx语法
-      globalReturn: true, //允许return在全局使用
-      impliedStrict: true, //启用严格校验模式
-      modules: true
     },
     extends: ['plugin:vue/essential',"eslint:recommended"],
     plugins: [],

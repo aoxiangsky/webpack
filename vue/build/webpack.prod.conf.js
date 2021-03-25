@@ -1,7 +1,9 @@
 "use strict";
 const path = require("path");
 const webpack = require("webpack");
-const merge = require("webpack-merge");
+const {
+  merge
+} = require('webpack-merge');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
@@ -114,53 +116,42 @@ const prodConfig = {
         test: /\.js(\?.*)?$/i,
         exclude: /node_modules/,
         parallel: true,
-        cache: true,
-        sourceMap: true,
-        terserOptions: {
-          compress: {
-            warnings: false,
-            drop_console: true,
-            drop_debugger: true,
-          },
-        },
+        // cache: true,
+        // sourceMap: true,
+        // terserOptions: {
+        //   compress: {
+        //     warnings: false,
+        //     drop_console: true,
+        //     drop_debugger: true,
+        //   },
+        // },
       }),
     ],
     runtimeChunk: {
       name: "runtime",
     },
-    splitChunks: {
-      chunks: "initial",
-      minSize: 30000,
-      maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 6,
-      maxInitialRequests: 4,
-      automaticNameDelimiter: "~",
-      automaticNameMaxLength: 30,
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10,
-        },
-        elementUI: {
-          test: /[\\/]node_modules[\\/]element-ui[\\/]/,
-          priority: 10,
-          enforce: true,
-        },
-        default: {
-          minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true,
-        },
-        // styles: {
-        //   name: "styles",
-        //   test: /\.css$/,
-        //   chunks: "all",
-        //   enforce: true,
-        //   priority: 20,
-        // },
-      },
-    },
+    // splitChunks: {
+    //   chunks: 'async',
+    //   minSize: 20000,
+    //   minRemainingSize: 0,
+    //   maxSize: 0,
+    //   minChunks: 1,
+    //   maxAsyncRequests: 30,
+    //   maxInitialRequests: 30,
+    //   enforceSizeThreshold: 50000,
+    //   cacheGroups: {
+    //     defaultVendors: {
+    //       test: /[\\/]node_modules[\\/]/,
+    //       priority: -10,
+    //       reuseExistingChunk: true,
+    //     },
+    //     default: {
+    //       minChunks: 2,
+    //       priority: -20,
+    //       reuseExistingChunk: true,
+    //     },
+    //   },
+    // }
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -214,22 +205,6 @@ const prodConfig = {
     //     },
     //   ],
     // }),
-    new webpack.NamedModulesPlugin((chunk) => {
-      if (chunk.name) {
-        return chunk.name;
-      }
-      const modules = Array.from(chunk.modulesIterable);
-      if (modules.length > 1) {
-        const hash = require("hash-sum");
-        const joinedHash = hash(modules.map((m) => m.id).join("_"));
-        let len = nameLength;
-        while (seen.has(joinedHash.substr(0, len))) len++;
-        seen.add(joinedHash.substr(0, len));
-        return `chunk-${joinedHash.substr(0, len)}`;
-      } else {
-        return modules[0].id;
-      }
-    }),
   ],
   output: {
     path: config.build.assetsRoot,
@@ -242,9 +217,8 @@ if (config.build.productionGzip) {
   const CompressionWebpackPlugin = require("compression-webpack-plugin");
   prodConfig.plugins.push(
     new CompressionWebpackPlugin({
-      filename: "[path].gz[query]",
+      filename: "[path][base].gz[query]",
       algorithm: "gzip",
-      cache: true,
       test: new RegExp(
         "\\.(" + config.build.productionGzipExtensions.join("|") + ")$"
       ),
@@ -260,4 +234,5 @@ if (config.build.bundleAnalyzerReport) {
   prodConfig.plugins.push(new BundleAnalyzerPlugin());
 }
 
-module.exports = smp.wrap(merge(commonConfig, prodConfig));
+module.exports = merge(commonConfig, prodConfig);
+// module.exports = smp.wrap(merge(commonConfig, prodConfig));

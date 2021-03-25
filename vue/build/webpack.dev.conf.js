@@ -3,7 +3,9 @@ const utils = require('./utils');
 const config = require('../config');
 const path = require('path');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
+const {
+    merge
+} = require('webpack-merge');
 const portfinder = require('portfinder');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 // const StylelintPlugin = require('stylelint-webpack-plugin');
@@ -16,7 +18,7 @@ const PORT = process.env.PORT && Number(process.env.PORT);
 
 const devConfig = merge(commonConfig, {
     mode: 'development',
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'eval-cheap-module-source-map',
     devServer: {
         open: config.dev.autoOpenBrowser,
         host: HOST || config.dev.host,
@@ -28,20 +30,20 @@ const devConfig = merge(commonConfig, {
         https: false,
         compress: false,
         historyApiFallback: {
-            rewrites: [
-                {
-                    from: /.*/,
-                    to: path.posix.join(config.dev.assetsPublicPath, 'index.html')
-                }
-            ]
+            rewrites: [{
+                from: /.*/,
+                to: path.posix.join(config.dev.assetsPublicPath, 'index.html')
+            }]
         },
-        overlay: config.dev.errorOverlay ? { warnings: false, errors: true } : false,
+        overlay: config.dev.errorOverlay ? {
+            warnings: false,
+            errors: true
+        } : false,
         proxy: config.dev.proxyTable
     },
     module: {
         noParse: '/^(vue|vue-router|vuex|vuex-router-sync)$/',
-        rules: [
-            {
+        rules: [{
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 use: {
                     loader: 'file-loader',
@@ -101,12 +103,10 @@ const devConfig = merge(commonConfig, {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: path.resolve(__dirname, '../static'),
-                    to: config.build.assetsSubDirectory
-                }
-            ]
+            patterns: [{
+                from: path.resolve(__dirname, '../static'),
+                to: config.build.assetsSubDirectory
+            }]
         }),
         new webpack.DefinePlugin({
             'process.env': env
