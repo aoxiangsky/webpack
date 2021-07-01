@@ -7,7 +7,7 @@ const path = require('path')
 const chalk = require('chalk')
 const config = require('../config')
 const webpackConfig = require('./webpack.prod.conf')
-
+console.log(webpackConfig)
 const spinner = ora('啊啊啊啊啊，我要生了ψ(*｀ー´)ψ')
 spinner.start()
 

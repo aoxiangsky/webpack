@@ -12,3 +12,4 @@ new Vue({
     vuetify,
     render: (h) => h(Entry)
 }).$mount('#root');
+

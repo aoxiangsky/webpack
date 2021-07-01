@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "description": "webpack-vue-pc",
   "main": "index.js",
-  "sideEffects": [
-    "*.css"
-  ],
+  "sideEffects": false,
   "scripts": {
     "start": "webpack serve --config ./build/webpack.dev.conf.js",
-    "test": "node ./build/webpack.dev.conf.js",
     "build": "node build/build.js",
+    "build:test": "webpack --config webpack.test.js",
     "lint": "eslint src --ext .js "
   },
   "repository": {

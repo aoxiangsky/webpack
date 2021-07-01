@@ -22,44 +22,49 @@ const env = require("../config/prod.env");
 
 const prodConfig = {
   mode: "production",
-  devtool: "cheap-module-source-map",
+  devtool: "eval",
+  // devtool: "eval-cheap-module-source-map",
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              name: "[name]-[hash:8].[ext]",
-              outputPath: "static/img/",
-              limit: 10240,
-            },
-          },
-          // {
-          //   loader: "image-webpack-loader",
-          //   options: {
-          //     mozjpeg: {
-          //       progressive: true,
-          //       quality: 65,
-          //     },
-          //     optipng: {
-          //       enabled: false,
-          //     },
-          //     pngquant: {
-          //       quality: [0.65, 0.9],
-          //       speed: 4,
-          //     },
-          //     gifsicle: {
-          //       interlaced: false,
-          //     },
-          //     webp: {
-          //       quality: 75,
-          //     },
-          //   },
-          // },
-        ],
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
+      // {
+      //   test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      //   use: [
+      //     // {
+      //     //   loader: "url-loader",
+      //     //   options: {
+      //     //     name: "[name]-[hash:8].[ext]",
+      //     //     outputPath: "static/img/",
+      //     //     limit: 10240,
+      //     //   },
+      //     // },
+      //     // {
+      //     //   loader: "image-webpack-loader",
+      //     //   options: {
+      //     //     mozjpeg: {
+      //     //       progressive: true,
+      //     //       quality: 65,
+      //     //     },
+      //     //     optipng: {
+      //     //       enabled: false,
+      //     //     },
+      //     //     pngquant: {
+      //     //       quality: [0.65, 0.9],
+      //     //       speed: 4,
+      //     //     },
+      //     //     gifsicle: {
+      //     //       interlaced: false,
+      //     //     },
+      //     //     webp: {
+      //     //       quality: 75,
+      //     //     },
+      //     //   },
+      //     // },
+      //   ],
+      // },
       {
         test: /\.css$/,
         use: [
@@ -102,6 +107,8 @@ const prodConfig = {
     maxEntrypointSize: 400000,
   },
   optimization: {
+    moduleIds: 'deterministic',
+    // runtimeChunk: 'single',
     minimize: true,
     minimizer: [
       new OptimizeCSSAssetsPlugin({
